@@ -31,13 +31,7 @@ export default function BookingForm({ defaultPackage = "" }: { defaultPackage?: 
 
   return (
     <form onSubmit={onSubmit} className="space-y-5" noValidate={false}>
-      <div>
-        <label htmlFor="package" className="text-sm font-medium">Package</label>
-        <select id="package" name="package" defaultValue={initial} className={field}>
-          <option value="">Not sure yet</option>
-          {packages.map((p) => <option key={p.slug} value={p.slug}>{p.name} ({p.from ? "from " : ""}{formatPrice(p.price)})</option>)}
-        </select>
-      </div>
+      <input type="hidden" name="package" value={initial} />
       <div><label htmlFor="name" className="text-sm font-medium">Name</label><input id="name" name="name" required autoComplete="name" className={field} /></div>
       <div><label htmlFor="email" className="text-sm font-medium">Email</label><input id="email" name="email" type="email" required autoComplete="email" className={field} /></div>
       <div><label htmlFor="company" className="text-sm font-medium">Company (optional)</label><input id="company" name="company" autoComplete="organization" className={field} /></div>
