@@ -3,6 +3,7 @@ import JsonLd from "@/components/JsonLd";
 import { photos } from "@/content";
 import { CtaBand, CtaRow } from "@/components/Cta";
 import HoverColorImage from "@/components/HoverColorImage";
+import Gallery from "@/components/Gallery";
 
 export const metadata = pageMeta("/work", "Work: Corporate Headshots and Executive Portraits", "Examples of studio headshots, executive portraits, team photos and creative business portraits by Mantas Kubilinskas in Washington, DC.");
 
@@ -25,19 +26,7 @@ export default function Work() {
         <div className="rise rise-3"><CtaRow work={false} className="justify-center" /></div>
       </section>
       <section className="mx-auto max-w-6xl px-6 py-20">
-        <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {photos.map((p) => (
-            <li key={p.src} className="relative aspect-[3/4] overflow-hidden rounded-3xl bg-neutral-100">
-              <HoverColorImage
-                bwSrc={p.src}
-                colorSrc={p.colorSrc}
-                alt={p.alt}
-                sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
-                imageClassName="object-cover transition duration-700 group-hover:scale-[1.03]"
-              />
-            </li>
-          ))}
-        </ul>
+        <Gallery photos={photos.map((p) => ({ src: p.src, colorSrc: p.colorSrc, alt: p.alt }))} />
       </section>
       <CtaBand title="Like what you see?" />
     </>
