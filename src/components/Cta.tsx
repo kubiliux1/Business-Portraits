@@ -5,9 +5,9 @@ export function Primary({ href = "/book", children = "Book a session" }: { href?
 export function Secondary({ href, children }: { href: string; children: React.ReactNode }) {
   return <Link href={href} className="inline-flex items-center rounded-full border border-neutral-300 px-6 py-3 text-[15px] font-medium text-black transition hover:border-black">{children}</Link>;
 }
-export function CtaRow({ work = true, pricing = true }: { work?: boolean; pricing?: boolean }) {
+export function CtaRow({ work = true, pricing = true, className = "" }: { work?: boolean; pricing?: boolean; className?: string }) {
   return (
-    <div className="mt-10 flex flex-wrap gap-3">
+    <div className={`mt-10 flex flex-wrap gap-3 ${className}`.trim()}>
       <Primary />
       {pricing && <Secondary href="/pricing">See pricing</Secondary>}
       {work && <Secondary href="/work">View work</Secondary>}
