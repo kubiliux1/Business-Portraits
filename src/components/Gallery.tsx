@@ -63,7 +63,7 @@ export default function Gallery({ photos }: { photos: Item[] }) {
     <>
       <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {photos.map((p, i) => (
-          <li key={p.src} className="relative aspect-[3/4] overflow-hidden rounded-3xl bg-neutral-100">
+          <li key={p.src} className="relative aspect-[3/4] overflow-hidden bg-neutral-100">
             <HoverColorImage
               bwSrc={p.src}
               colorSrc={p.colorSrc}
@@ -99,7 +99,7 @@ export default function Gallery({ photos }: { photos: Item[] }) {
               e.stopPropagation();
               close();
             }}
-            className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-2xl text-white transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
+            className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center bg-white/10 text-2xl text-white transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
           >
             <span aria-hidden>&times;</span>
           </button>
@@ -110,7 +110,7 @@ export default function Gallery({ photos }: { photos: Item[] }) {
               e.stopPropagation();
               step(-1);
             }}
-            className="absolute left-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-2xl text-white transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white sm:left-6"
+            className="absolute left-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center bg-white/10 text-2xl text-white transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white sm:left-6"
           >
             <span aria-hidden>&#8249;</span>
           </button>
@@ -121,13 +121,13 @@ export default function Gallery({ photos }: { photos: Item[] }) {
               e.stopPropagation();
               step(1);
             }}
-            className="absolute right-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-2xl text-white transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white sm:right-6"
+            className="absolute right-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center bg-white/10 text-2xl text-white transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white sm:right-6"
           >
             <span aria-hidden>&#8250;</span>
           </button>
 
           <div
-            className="relative aspect-[3/4] w-[min(88vw,calc(78vh*3/4))] overflow-hidden rounded-2xl"
+            className="relative aspect-[3/4] w-[min(88vw,calc(78vh*3/4))] overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             <Image key={current.colorSrc} src={current.colorSrc} alt={current.alt} fill sizes="90vw" quality={85} className="object-cover" priority />
