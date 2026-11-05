@@ -27,7 +27,7 @@ export default function ServicePage({ slug }: { slug: string }) {
             <Secondary href="/pricing">See pricing</Secondary>
           </div>
         </div>
-        <div className="relative aspect-[4/5] w-full overflow-hidden">
+        <div className={`relative w-full overflow-hidden ${s.image.wide ? "aspect-video" : "aspect-[3/4] max-w-md lg:ml-auto"}`}>
           <HoverColorImage bwSrc={s.image.bw} colorSrc={s.image.color} alt={s.image.alt} priority sizes="(min-width:1024px) 50vw, 100vw" />
         </div>
       </section>
