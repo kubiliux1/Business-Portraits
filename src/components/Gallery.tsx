@@ -135,7 +135,7 @@ export default function Gallery({ photos }: { photos: Item[] }) {
               e.stopPropagation();
               setColor((v) => !v);
             }}
-            onMouseEnter={() => setColor(true)}
+            onMouseMove={() => !color && setColor(true)}
             onMouseLeave={() => setColor(false)}
           >
             <Image key={current.src} src={current.src} alt={current.alt} fill sizes="90vw" quality={85} className="object-cover" priority />
