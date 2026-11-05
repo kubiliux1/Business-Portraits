@@ -26,8 +26,8 @@ export default function Pricing() {
           {packages.map((p) => {
             const hi = p.popular;
             return (
-              <article key={p.slug} className={`relative flex flex-col rounded-3xl p-8 ${hi ? "bg-black text-white" : "bg-neutral-100"}`}>
-                {hi && <p className="mb-4 inline-flex w-fit rounded-full bg-white px-3 py-1 text-xs font-medium text-black">Most popular</p>}
+              <article key={p.slug} className={`relative flex flex-col p-8 ${hi ? "bg-black text-white" : "bg-neutral-100"}`}>
+                {hi && <p className="mb-4 inline-flex w-fit bg-white px-3 py-1 text-xs font-medium text-black">Most popular</p>}
                 <h2 className="text-2xl font-semibold tracking-tight">{p.name}</h2>
                 <p className="mt-4 text-4xl font-semibold tracking-tight">
                   {p.from && <span className={`mr-1 text-lg font-medium ${hi ? "text-neutral-300" : "text-neutral-500"}`}>from</span>}
@@ -40,7 +40,7 @@ export default function Pricing() {
                 <Link
                   href={`/book?package=${p.slug}`}
                   aria-label={`Book the ${p.name} package`}
-                  className={`mt-8 inline-flex justify-center rounded-full px-6 py-3 text-[15px] font-medium transition ${hi ? "bg-white text-black hover:bg-neutral-200" : "bg-black text-white hover:bg-neutral-800"}`}
+                  className={`mt-8 inline-flex justify-center px-6 py-3 text-[15px] font-medium transition ${hi ? "bg-white text-black hover:bg-neutral-200" : "bg-black text-white hover:bg-neutral-800"}`}
                 >
                   Book this package
                 </Link>
