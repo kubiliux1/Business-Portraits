@@ -9,7 +9,7 @@ import HoverColorImage from "@/components/HoverColorImage";
 
 const steps = [
   { n: "01", t: "Request a time", d: "Send a short request with your date, the number of people and what the photos are for." },
-  { n: "02", t: "Plan the look", d: "We agree on background,wardrobe and the feel you want, so nothing is left to guess on the day." },
+  { n: "02", t: "Plan the look", d: "We agree on background, wardrobe and the feel you want, so nothing is left to guess on the day." },
   { n: "03", t: "Shoot and choose", d: "I guide you through the session. Then you pick your favorites and I finish them." },
 ];
 const audiences = [
@@ -42,13 +42,14 @@ export default function Home() {
             <h1 className="rise text-sm font-medium text-neutral-600">Business headshots in {site.city}</h1>
             <p className="rise rise-2 mt-4 text-5xl font-semibold leading-[1.05] tracking-tight text-black sm:text-6xl lg:text-7xl">Look like yourself. Only sharper.</p>
             <p className="rise rise-3 mt-6 text-xl text-neutral-700">Corporate headshots, LinkedIn headshots and executive portraits by {site.name}. {site.years} behind the camera, now focused on people who need to look their best at work.</p>
+            <p className="rise rise-3 mt-4 text-base font-medium text-black">Headshots from $350. Team days from $1900.</p>
             <div className="rise rise-3 [&_a:not(:first-child)]:border-black/20 [&_a:not(:first-child)]:bg-white"><CtaRow /></div>
           </div>
         </div>
       </section>
 
       <div className="mx-auto mt-16 hidden max-w-[1600px] px-0 sm:px-6">
-        <div className="relative aspect-[16/9] w-full overflow-hidden sm:rounded-[2rem]">
+        <div className="relative aspect-[16/9] w-full overflow-hidden">
           <HoverColorImage
             bwSrc="/img/hero.jpg"
             colorSrc="/img/hero-color.jpg"
@@ -62,7 +63,7 @@ export default function Home() {
         <h2 className="max-w-3xl text-4xl font-semibold tracking-tight sm:text-6xl">Simple from start to finish.</h2>
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           {steps.map((s) => (
-            <div key={s.n} className="rounded-3xl bg-neutral-100 p-8">
+            <div key={s.n} className=" bg-neutral-100 p-8">
               <p className="text-sm font-medium text-neutral-500">{s.n}</p>
               <h3 className="mt-6 text-2xl font-semibold tracking-tight">{s.t}</h3>
               <p className="mt-3 text-neutral-600">{s.d}</p>
@@ -80,7 +81,7 @@ export default function Home() {
           </div>
           <div className="mt-14 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-5">
             {photos.slice(0, 6).map((p) => (
-              <div key={p.src} className="relative aspect-[3/4] overflow-hidden rounded-2xl">
+              <div key={p.src} className="relative aspect-[3/4] overflow-hidden">
                 <HoverColorImage
                   bwSrc={p.src}
                   colorSrc={p.colorSrc}
@@ -92,8 +93,8 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-12 flex flex-wrap gap-3">
-            <Link href="/book" className="inline-flex rounded-full bg-white px-6 py-3 text-[15px] font-medium text-black hover:bg-neutral-200">Book a session</Link>
-            <Link href="/work" className="inline-flex rounded-full border border-neutral-600 px-6 py-3 text-[15px] font-medium hover:border-white">View work</Link>
+            <Link href="/book" className="inline-flex bg-white px-6 py-3 text-[15px] font-medium text-black hover:bg-neutral-200">Book your headshot</Link>
+            <Link href="/work" className="inline-flex border border-neutral-600 px-6 py-3 text-[15px] font-medium hover:border-white">View work</Link>
           </div>
         </div>
       </section>
@@ -108,7 +109,7 @@ export default function Home() {
           </ul>
           <div className="mt-10"><Primary /></div>
         </div>
-        <div className="relative aspect-[16/10] overflow-hidden rounded-[2rem]">
+        <div className="relative aspect-[16/10] overflow-hidden">
           <HoverColorImage
             bwSrc="/img/team.jpg"
             colorSrc="/img/team-color.jpg"
@@ -119,7 +120,7 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-6xl px-6 pb-28">
-        <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] sm:aspect-[21/9]">
+        <div className="relative aspect-[4/3] overflow-hidden sm:aspect-[21/9]">
           <HoverColorImage
             bwSrc="/img/studio.jpg"
             colorSrc="/img/studio-color.jpg"
