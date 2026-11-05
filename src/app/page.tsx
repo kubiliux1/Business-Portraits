@@ -9,7 +9,7 @@ import HoverColorImage from "@/components/HoverColorImage";
 
 const steps = [
   { n: "01", t: "Request a time", d: "Send a short request with your date, the number of people and what the photos are for." },
-  { n: "02", t: "Plan the look", d: "We agree on background,wardrobe and the feel you want, so nothing is left to guess on the day." },
+  { n: "02", t: "Plan the look", d: "We agree on background, wardrobe and the feel you want, so nothing is left to guess on the day." },
   { n: "03", t: "Shoot and choose", d: "I guide you through the session. Then you pick your favorites and I finish them." },
 ];
 const audiences = [
@@ -42,6 +42,7 @@ export default function Home() {
             <h1 className="rise text-sm font-medium text-neutral-600">Business headshots in {site.city}</h1>
             <p className="rise rise-2 mt-4 text-5xl font-semibold leading-[1.05] tracking-tight text-black sm:text-6xl lg:text-7xl">Look like yourself. Only sharper.</p>
             <p className="rise rise-3 mt-6 text-xl text-neutral-700">Corporate headshots, LinkedIn headshots and executive portraits by {site.name}. {site.years} behind the camera, now focused on people who need to look their best at work.</p>
+            <p className="rise rise-3 mt-4 text-base font-medium text-black">Headshots from $350. Team days from $1900.</p>
             <div className="rise rise-3 [&_a:not(:first-child)]:border-black/20 [&_a:not(:first-child)]:bg-white"><CtaRow /></div>
           </div>
         </div>
@@ -92,7 +93,7 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-12 flex flex-wrap gap-3">
-            <Link href="/book" className="inline-flex bg-white px-6 py-3 text-[15px] font-medium text-black hover:bg-neutral-200">Book a session</Link>
+            <Link href="/book" className="inline-flex bg-white px-6 py-3 text-[15px] font-medium text-black hover:bg-neutral-200">Book your headshot</Link>
             <Link href="/work" className="inline-flex border border-neutral-600 px-6 py-3 text-[15px] font-medium hover:border-white">View work</Link>
           </div>
         </div>
