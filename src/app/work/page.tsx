@@ -12,7 +12,7 @@ export default function Work() {
     <>
       <JsonLd data={breadcrumb([{ name: "Work", path: "/work" }])} />
       <section className="mx-auto max-w-6xl px-6 pt-20 sm:pt-28">
-        <div className="relative aspect-[16/9] overflow-hidden rounded-[2rem]">
+        <div className="relative aspect-[16/9] overflow-hidden">
           <HoverColorImage
             bwSrc="/img/team.jpg"
             colorSrc="/img/team-color.jpg"
