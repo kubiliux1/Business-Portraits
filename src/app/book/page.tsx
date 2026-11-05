@@ -23,7 +23,7 @@ export default function Book() {
           />
         </div>
       </div>
-      <div className=" bg-neutral-100 p-6 sm:p-10"><Suspense fallback={<BookingForm />}><BookingFromUrl /></Suspense></div>
+      <div className=" bg-neutral-100 p-6 sm:p-10"><p className="mb-6 text-[15px] text-neutral-700">No payment now. I reply with a time and a price.</p><Suspense fallback={<BookingForm />}><BookingFromUrl /></Suspense></div>
     </section>
     </>
   );
