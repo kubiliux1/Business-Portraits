@@ -48,7 +48,7 @@ export default function Home() {
       </section>
 
       <div className="mx-auto mt-16 hidden max-w-[1600px] px-0 sm:px-6">
-        <div className="relative aspect-[16/9] w-full overflow-hidden sm:rounded-[2rem]">
+        <div className="relative aspect-[16/9] w-full overflow-hidden">
           <HoverColorImage
             bwSrc="/img/hero.jpg"
             colorSrc="/img/hero-color.jpg"
@@ -62,7 +62,7 @@ export default function Home() {
         <h2 className="max-w-3xl text-4xl font-semibold tracking-tight sm:text-6xl">Simple from start to finish.</h2>
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           {steps.map((s) => (
-            <div key={s.n} className="rounded-3xl bg-neutral-100 p-8">
+            <div key={s.n} className=" bg-neutral-100 p-8">
               <p className="text-sm font-medium text-neutral-500">{s.n}</p>
               <h3 className="mt-6 text-2xl font-semibold tracking-tight">{s.t}</h3>
               <p className="mt-3 text-neutral-600">{s.d}</p>
@@ -80,7 +80,7 @@ export default function Home() {
           </div>
           <div className="mt-14 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-5">
             {photos.slice(0, 6).map((p) => (
-              <div key={p.src} className="relative aspect-[3/4] overflow-hidden rounded-2xl">
+              <div key={p.src} className="relative aspect-[3/4] overflow-hidden">
                 <HoverColorImage
                   bwSrc={p.src}
                   colorSrc={p.colorSrc}
@@ -92,8 +92,8 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-12 flex flex-wrap gap-3">
-            <Link href="/book" className="inline-flex rounded-full bg-white px-6 py-3 text-[15px] font-medium text-black hover:bg-neutral-200">Book a session</Link>
-            <Link href="/work" className="inline-flex rounded-full border border-neutral-600 px-6 py-3 text-[15px] font-medium hover:border-white">View work</Link>
+            <Link href="/book" className="inline-flex bg-white px-6 py-3 text-[15px] font-medium text-black hover:bg-neutral-200">Book a session</Link>
+            <Link href="/work" className="inline-flex border border-neutral-600 px-6 py-3 text-[15px] font-medium hover:border-white">View work</Link>
           </div>
         </div>
       </section>
@@ -108,7 +108,7 @@ export default function Home() {
           </ul>
           <div className="mt-10"><Primary /></div>
         </div>
-        <div className="relative aspect-[16/10] overflow-hidden rounded-[2rem]">
+        <div className="relative aspect-[16/10] overflow-hidden">
           <HoverColorImage
             bwSrc="/img/team.jpg"
             colorSrc="/img/team-color.jpg"
@@ -119,7 +119,7 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-6xl px-6 pb-28">
-        <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] sm:aspect-[21/9]">
+        <div className="relative aspect-[4/3] overflow-hidden sm:aspect-[21/9]">
           <HoverColorImage
             bwSrc="/img/studio.jpg"
             colorSrc="/img/studio-color.jpg"
