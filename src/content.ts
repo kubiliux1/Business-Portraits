@@ -1,4 +1,4 @@
-export type Photo = { src: string; alt: string; width: number; height: number };
+export type Photo = { src: string; colorSrc: string; alt: string; width: number; height: number };
 export type Package = { slug: string; name: string; price: number; from?: boolean; popular?: boolean; note?: string; details: string[] };
 
 export const site = {
@@ -8,7 +8,13 @@ export const site = {
   years: "15 years",
 };
 
-const p = (n: string, alt: string): Photo => ({ src: `/img/${n}.jpg`, alt, width: 864, height: 1152 });
+const p = (n: string, alt: string): Photo => ({
+  src: `/img/${n}.jpg`,
+  colorSrc: `/img/${n}-color.jpg`,
+  alt,
+  width: 864,
+  height: 1152,
+});
 
 export const photos: Photo[] = [
   p("g2", "Studio portrait of a creative director in a black turtleneck on white"),
