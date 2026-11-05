@@ -8,7 +8,6 @@ type Item = { src: string; colorSrc: string; alt: string };
 
 export default function Gallery({ photos }: { photos: Item[] }) {
   const [open, setOpen] = useState<number | null>(null);
-  const [color, setColor] = useState(false);
   const lastFocus = useRef<HTMLElement | null>(null);
   const closeRef = useRef<HTMLButtonElement | null>(null);
   const touchX = useRef<number | null>(null);
@@ -16,7 +15,6 @@ export default function Gallery({ photos }: { photos: Item[] }) {
 
   const show = useCallback((i: number) => {
     lastFocus.current = document.activeElement as HTMLElement | null;
-    setColor(false);
     setOpen(i);
   }, []);
   const close = useCallback(() => {
@@ -25,8 +23,7 @@ export default function Gallery({ photos }: { photos: Item[] }) {
   }, []);
   const step = useCallback(
     (d: number) => {
-      setColor(false);
-      setOpen((i) => (i === null ? i : (i + d + n) % n));
+        setOpen((i) => (i === null ? i : (i + d + n) % n));
     },
     [n]
   );
@@ -53,7 +50,7 @@ export default function Gallery({ photos }: { photos: Item[] }) {
     if (open === null) return;
     [1, -1].forEach((d) => {
       const p = photos[(open + d + n) % n];
-      [p.src, p.colorSrc].forEach((u) => {
+      [p.colorSrc].forEach((u) => {
         const im = new window.Image();
         im.src = `/_next/image?url=${encodeURIComponent(u)}&w=1920&q=75`;
       });
@@ -131,25 +128,9 @@ export default function Gallery({ photos }: { photos: Item[] }) {
 
           <div
             className="relative aspect-[3/4] w-[min(88vw,calc(78vh*3/4))] overflow-hidden rounded-2xl"
-            onClick={(e) => {
-              e.stopPropagation();
-              setColor((v) => !v);
-            }}
-            onMouseMove={() => !color && setColor(true)}
-            onMouseLeave={() => setColor(false)}
+            onClick={(e) => e.stopPropagation()}
           >
-            <Image key={current.src} src={current.src} alt={current.alt} fill sizes="90vw" quality={85} className="object-cover" priority />
-            <Image
-              key={current.colorSrc}
-              src={current.colorSrc}
-              alt=""
-              aria-hidden
-              fill
-              sizes="90vw"
-              quality={85}
-              priority
-              className={`object-cover transition-opacity duration-500 ease-out ${color ? "opacity-100" : "opacity-0"}`}
-            />
+            <Image key={current.colorSrc} src={current.colorSrc} alt={current.alt} fill sizes="90vw" quality={85} className="object-cover" priority />
           </div>
           <p className="absolute bottom-4 left-0 right-0 text-center text-sm text-neutral-400" aria-live="polite">
             {open + 1} / {n}
