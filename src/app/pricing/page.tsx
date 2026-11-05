@@ -50,9 +50,9 @@ export default function Pricing() {
         </div>
         <p className="mt-8 text-center text-sm text-neutral-500">Not sure which one fits? Book a session and tell me what the photos are for.</p>
       </section>
-      <section className="mx-auto max-w-3xl px-6 pb-28">
-        <h2 className="text-4xl font-semibold tracking-tight">Questions.</h2>
-        <div className="mt-10"><Faq items={faqs} /></div>
+      <section className="mx-auto grid max-w-6xl gap-10 px-6 pb-28 lg:grid-cols-3 lg:gap-16">
+        <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">Questions.</h2>
+        <div className="lg:col-span-2"><Faq items={faqs} /></div>
       </section>
       <CtaBand title="Ready to book?" text="Choose a package and a date that works for you." />
     </>
