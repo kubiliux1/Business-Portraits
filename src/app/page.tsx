@@ -33,7 +33,7 @@ export default function Home() {
             alt="Business portrait of a woman in a dark blazer against a light gray backdrop"
             priority
             sizes="100vw"
-            imageClassName="object-cover object-[80%_center]"
+            imageClassName="object-cover object-[80%_top]"
           />
           <div className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-white/60 via-white/10 to-transparent md:block" />
         </div>
@@ -109,7 +109,7 @@ export default function Home() {
           </ul>
           <div className="mt-10"><Primary /></div>
         </div>
-        <div className="relative aspect-[16/10] overflow-hidden">
+        <div className="relative aspect-video overflow-hidden">
           <HoverColorImage
             bwSrc="/img/team.jpg"
             colorSrc="/img/team-color.jpg"
