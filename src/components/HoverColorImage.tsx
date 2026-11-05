@@ -11,6 +11,7 @@ type Props = {
   priority?: boolean;
   className?: string;
   imageClassName?: string;
+  onOpen?: () => void;
 };
 
 export default function HoverColorImage({
@@ -21,23 +22,28 @@ export default function HoverColorImage({
   priority = false,
   className = "",
   imageClassName = "object-cover",
+  onOpen,
 }: Props) {
   const [showColor, setShowColor] = useState(false);
 
   const onEnter = useCallback(() => setShowColor(true), []);
   const onLeave = useCallback(() => setShowColor(false), []);
   const onActivate = useCallback(() => {
+    if (onOpen) {
+      onOpen();
+      return;
+    }
     if (typeof window !== "undefined" && window.matchMedia("(hover: none)").matches) {
       setShowColor((v) => !v);
     }
-  }, []);
+  }, [onOpen]);
 
   return (
     <div
       role="button"
       tabIndex={0}
-      aria-pressed={showColor}
-      aria-label={`${alt}. Hover or tap to view in color.`}
+      aria-pressed={onOpen ? undefined : showColor}
+      aria-label={onOpen ? `${alt}. Open larger view.` : `${alt}. Hover or tap to view in color.`}
       className={`group absolute inset-0 cursor-pointer overflow-hidden ${className}`.trim()}
       onMouseEnter={onEnter}
       onMouseLeave={onLeave}
@@ -47,7 +53,8 @@ export default function HoverColorImage({
       onKeyDown={(e) => {
         if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
-          setShowColor((v) => !v);
+          if (onOpen) onOpen();
+          else setShowColor((v) => !v);
         }
       }}
     >
