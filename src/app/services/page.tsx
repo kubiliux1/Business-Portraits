@@ -18,13 +18,13 @@ export default function Services() {
         <div className="rise rise-3 mt-10 flex flex-wrap justify-center gap-3"><Primary /><Secondary href="/pricing">See pricing</Secondary></div>
       </section>
       <section className="mx-auto max-w-6xl px-6 py-24">
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2">
           {serviceList.map((s) => {
             const first = packages.find((p) => p.slug === s.packageSlugs[0])!;
             return (
-              <Link key={s.slug} href={s.path} className="group flex flex-col bg-neutral-100 transition hover:bg-neutral-200">
-                <div className="relative aspect-[4/3] w-full overflow-hidden">
-                  <HoverColorImage bwSrc={s.image.bw} colorSrc={s.image.color} alt={s.image.alt} sizes="(min-width:768px) 33vw, 100vw" />
+              <Link key={s.slug} href={s.path} className={`group flex flex-col bg-neutral-100 transition hover:bg-neutral-200 ${s.image.wide ? "md:col-span-2 md:flex-row" : ""}`}>
+                <div className={`relative w-full overflow-hidden ${s.image.wide ? "aspect-video md:w-1/2" : "aspect-[3/4]"}`}>
+                  <HoverColorImage bwSrc={s.image.bw} colorSrc={s.image.color} alt={s.image.alt} sizes="(min-width:768px) 50vw, 100vw" />
                 </div>
                 <div className="flex flex-1 flex-col p-8">
                   <h2 className="text-2xl font-semibold tracking-tight">{s.title}</h2>
