@@ -12,7 +12,7 @@ export type ServiceInfo = {
   packageSlugs: string[];
   cta: string;
   ctaPackage: string;
-  image: { bw: string; color: string; alt: string };
+  image: { bw: string; color: string; alt: string; wide?: boolean };
   forTitle: string;
   forList: { t: string; d: string }[];
   steps: { t: string; d: string }[];
@@ -94,7 +94,7 @@ export const serviceList: ServiceInfo[] = [
     packageSlugs: ["team-day"],
     cta: "Request a team quote",
     ctaPackage: "team-day",
-    image: { bw: "/img/team.jpg", color: "/img/team-color.jpg", alt: "Portrait of a business team in a white studio" },
+    image: { bw: "/img/team.jpg", color: "/img/team-color.jpg", alt: "Portrait of a business team in a white studio", wide: true },
     forTitle: "Good for.",
     forList: [
       { t: "Team and About pages", d: "Matching photos for everyone on your site." },
