@@ -14,7 +14,7 @@ export default function Book() {
         <h1 className="rise text-5xl font-semibold tracking-tight sm:text-6xl">Book a session.</h1>
         <p className="rise rise-2 mt-6 max-w-lg text-xl text-neutral-600">Tell me a little about what you need and when. I&apos;ll reply to confirm a time and a price.</p>
         <div className="rise rise-3 mt-8 flex flex-wrap gap-3"><Secondary href="/pricing">See pricing</Secondary><Secondary href="/work">View work</Secondary></div>
-        <div className="relative mt-12 hidden aspect-[3/4] max-w-md overflow-hidden rounded-[2rem] lg:block">
+        <div className="relative mt-12 hidden aspect-[3/4] max-w-md overflow-hidden lg:block">
           <HoverColorImage
             bwSrc="/img/g6.jpg"
             colorSrc="/img/g6-color.jpg"
@@ -23,7 +23,7 @@ export default function Book() {
           />
         </div>
       </div>
-      <div className="rounded-[2rem] bg-neutral-100 p-6 sm:p-10"><Suspense fallback={<BookingForm />}><BookingFromUrl /></Suspense></div>
+      <div className=" bg-neutral-100 p-6 sm:p-10"><Suspense fallback={<BookingForm />}><BookingFromUrl /></Suspense></div>
     </section>
     </>
   );
