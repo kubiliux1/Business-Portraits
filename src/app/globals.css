@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@theme {
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", var(--font-inter), "Helvetica Neue", Arial, sans-serif;
+}
+:root { color-scheme: light; }
+html { background: #ffffff; color: #000000; -webkit-font-smoothing: antialiased; }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.rise { animation: rise 0.8s cubic-bezier(.2,.7,.2,1) both; }
+.rise-2 { animation-delay: .12s; } .rise-3 { animation-delay: .24s; }
+@media (prefers-reduced-motion: reduce) { .rise { animation: none; } }
