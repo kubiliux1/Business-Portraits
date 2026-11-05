@@ -8,13 +8,17 @@ export default function Header() {
         <Link href="/" className="text-[15px] font-semibold tracking-tight">{site.name}</Link>
         <div className="flex items-center gap-5 text-[14px]">
           <Link href="/work" className="hidden text-neutral-700 hover:text-black sm:inline">Work</Link>
+          <Link href="/services" className="hidden text-neutral-700 hover:text-black sm:inline">Services</Link>
           <Link href="/pricing" className="hidden text-neutral-700 hover:text-black sm:inline">Pricing</Link>
+          <Link href="/about" className="hidden text-neutral-700 hover:text-black sm:inline">About</Link>
           <Link href="/book" className=" bg-black px-4 py-1.5 font-medium text-white hover:bg-neutral-800">Book a session</Link>
         </div>
       </nav>
       <div className="flex justify-center gap-6 border-t border-neutral-200/70 py-2 text-[14px] sm:hidden">
         <Link href="/work" className="text-neutral-700">Work</Link>
+        <Link href="/services" className="text-neutral-700">Services</Link>
         <Link href="/pricing" className="text-neutral-700">Pricing</Link>
+        <Link href="/about" className="text-neutral-700">About</Link>
       </div>
     </header>
   );
