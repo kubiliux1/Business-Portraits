@@ -1,7 +1,7 @@
 export type QA = { q: string; a: string };
 export default function Faq({ items }: { items: QA[] }) {
   return (
-    <div className="divide-y divide-neutral-200 rounded-3xl border border-neutral-200">
+    <div className="divide-y divide-neutral-200 border border-neutral-200">
       {items.map((i) => (
         <details key={i.q} className="group px-6 py-6 sm:px-8">
           <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[17px] font-medium leading-snug">

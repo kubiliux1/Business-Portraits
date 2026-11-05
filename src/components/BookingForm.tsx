@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { packages, formatPrice } from "@/content";
 
-const field = "mt-1 block w-full rounded-xl border border-neutral-300 bg-white px-3 py-2 text-base focus:border-black focus:outline-none focus:ring-1 focus:ring-black";
+const field = "mt-1 block w-full border border-neutral-300 bg-white px-3 py-2 text-base focus:border-black focus:outline-none focus:ring-1 focus:ring-black";
 
 export default function BookingForm({ defaultPackage = "" }: { defaultPackage?: string }) {
   const initial = packages.some((p) => p.slug === defaultPackage) ? defaultPackage : "";
@@ -48,7 +48,7 @@ export default function BookingForm({ defaultPackage = "" }: { defaultPackage?: 
       <div><label htmlFor="message" className="text-sm font-medium">What do you need the photos for?</label><textarea id="message" name="message" rows={5} className={field} /></div>
       <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
       {state === "error" && <p role="alert" className="text-sm text-black underline">{msg}</p>}
-      <button type="submit" disabled={state === "sending"} className="rounded-full bg-black px-6 py-3 text-sm font-medium text-white hover:bg-neutral-800 disabled:bg-neutral-500">
+      <button type="submit" disabled={state === "sending"} className=" bg-black px-6 py-3 text-sm font-medium text-white hover:bg-neutral-800 disabled:bg-neutral-500">
         {state === "sending" ? "Sending..." : "Send request"}
       </button>
     </form>
