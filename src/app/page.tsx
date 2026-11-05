@@ -1,15 +1,15 @@
 import { pageMeta, breadcrumb, faqSchema } from "@/lib/seo";
 import JsonLd from "@/components/JsonLd";
-import Image from "next/image";
 import Link from "next/link";
 import { site, photos } from "@/content";
 import { CtaRow, CtaBand, Primary } from "@/components/Cta";
 import Faq from "@/components/Faq";
 import { faqs } from "@/faq";
+import HoverColorImage from "@/components/HoverColorImage";
 
 const steps = [
   { n: "01", t: "Request a time", d: "Send a short request with your date, the number of people and what the photos are for." },
-  { n: "02", t: "Plan the look", d: "We agree on background, wardrobe and the feel you want, so nothing is left to guess on the day." },
+  { n: "02", t: "Plan the look", d: "We agree on background,wardrobe and the feel you want, so nothing is left to guess on the day." },
   { n: "03", t: "Shoot and choose", d: "I guide you through the session. Then you pick your favorites and I finish them." },
 ];
 const audiences = [
@@ -27,11 +27,18 @@ export default function Home() {
       <JsonLd data={breadcrumb([])} /><JsonLd data={faqSchema()} />
       <section className="relative overflow-hidden bg-neutral-200">
         <div className="relative aspect-[2442/1326] w-full md:absolute md:inset-0 md:aspect-auto">
-          <Image src="/img/hero-woman.jpg" alt="Black and white business portrait of a woman in a dark blazer against a light gray backdrop" fill priority sizes="100vw" className="object-cover object-[80%_center]" />
-          <div className="absolute inset-0 hidden bg-gradient-to-r from-white/60 via-white/10 to-transparent md:block" />
+          <HoverColorImage
+            bwSrc="/img/hero-woman.jpg"
+            colorSrc="/img/hero-woman-color.jpg"
+            alt="Business portrait of a woman in a dark blazer against a light gray backdrop"
+            priority
+            sizes="100vw"
+            imageClassName="object-cover object-[80%_center]"
+          />
+          <div className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-white/60 via-white/10 to-transparent md:block" />
         </div>
-        <div className="relative mx-auto max-w-6xl bg-white px-6 py-12 md:bg-transparent md:py-32 lg:py-40">
-          <div className="md:max-w-[55%] lg:max-w-[50%]">
+        <div className="pointer-events-none relative mx-auto max-w-6xl bg-white px-6 py-12 md:bg-transparent md:py-32 lg:py-40">
+          <div className="pointer-events-auto md:max-w-[55%] lg:max-w-[50%]">
             <h1 className="rise text-sm font-medium text-neutral-600">Business headshots in {site.city}</h1>
             <p className="rise rise-2 mt-4 text-5xl font-semibold leading-[1.05] tracking-tight text-black sm:text-6xl lg:text-7xl">Look like yourself. Only sharper.</p>
             <p className="rise rise-3 mt-6 text-xl text-neutral-700">Corporate headshots, LinkedIn headshots and executive portraits by {site.name}. {site.years} behind the camera, now focused on people who need to look their best at work.</p>
@@ -42,7 +49,12 @@ export default function Home() {
 
       <div className="mx-auto mt-16 hidden max-w-[1600px] px-0 sm:px-6">
         <div className="relative aspect-[16/9] w-full overflow-hidden sm:rounded-[2rem]">
-          <Image src="/img/hero.jpg" alt="Black and white studio portrait of a businesswoman in a dark blazer" fill sizes="100vw" className="object-cover" />
+          <HoverColorImage
+            bwSrc="/img/hero.jpg"
+            colorSrc="/img/hero-color.jpg"
+            alt="Studio portrait of a businesswoman in a dark blazer"
+            sizes="100vw"
+          />
         </div>
       </div>
 
@@ -69,7 +81,13 @@ export default function Home() {
           <div className="mt-14 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-5">
             {photos.slice(0, 6).map((p) => (
               <div key={p.src} className="relative aspect-[3/4] overflow-hidden rounded-2xl">
-                <Image src={p.src} alt={p.alt} fill sizes="(min-width:768px) 33vw, 50vw" className="object-cover transition duration-700 hover:scale-[1.03]" />
+                <HoverColorImage
+                  bwSrc={p.src}
+                  colorSrc={p.colorSrc}
+                  alt={p.alt}
+                  sizes="(min-width:768px) 33vw, 50vw"
+                  imageClassName="object-cover transition duration-700 group-hover:scale-[1.03]"
+                />
               </div>
             ))}
           </div>
@@ -91,13 +109,23 @@ export default function Home() {
           <div className="mt-10"><Primary /></div>
         </div>
         <div className="relative aspect-[16/10] overflow-hidden rounded-[2rem]">
-          <Image src="/img/team.jpg" alt="Black and white portrait of a business team in a white studio" fill sizes="(min-width:768px) 50vw, 100vw" className="object-cover" />
+          <HoverColorImage
+            bwSrc="/img/team.jpg"
+            colorSrc="/img/team-color.jpg"
+            alt="Portrait of a business team in a white studio"
+            sizes="(min-width:768px) 50vw, 100vw"
+          />
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-6 pb-28">
         <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] sm:aspect-[21/9]">
-          <Image src="/img/studio.jpg" alt="Portrait studio with a camera, softbox light and gray backdrop" fill sizes="100vw" className="object-cover" />
+          <HoverColorImage
+            bwSrc="/img/studio.jpg"
+            colorSrc="/img/studio-color.jpg"
+            alt="Portrait studio with a camera, softbox light and gray backdrop"
+            sizes="100vw"
+          />
         </div>
         <div className="mt-14 grid gap-10 md:grid-cols-3">
           <div><h3 className="text-xl font-semibold">Guidance the whole way</h3><p className="mt-2 text-neutral-600">Help with posture, angles and expression, so you never wonder what to do with your hands.</p></div>
@@ -107,9 +135,9 @@ export default function Home() {
         <CtaRow work={false} />
       </section>
 
-      <section className="mx-auto max-w-3xl px-6 pb-28">
+      <section className="mx-auto grid max-w-6xl gap-10 px-6 pb-28 lg:grid-cols-3 lg:gap-16">
         <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">Questions.</h2>
-        <div className="mt-10"><Faq items={faqs} /></div>
+        <div className="lg:col-span-2"><Faq items={faqs} /></div>
       </section>
 
       <CtaBand />
